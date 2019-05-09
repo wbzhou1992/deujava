@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wbzhou.dao.UserDao" >
+    <select id="getUserById" resultType="com.wbzhou.model.User">
+        select * from users where phone = #{username};
+    </select>
+    <insert id="insert" parameterType="com.wbzhou.model.User">
+        insert into users(phone,passwd,name,id,createdAt,updatedAt,version) values(#{phone},#{passwd},#{name},#{id},#{createdAt},#{updatedAt},#{version})
+    </insert>
+</mapper>
